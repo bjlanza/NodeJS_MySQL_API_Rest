@@ -24,8 +24,8 @@ Article.create = (newArticle, result) => {
 };
 
 Article.findById = (articleId, result) => {
-  console.log(articleId);
-  sql.query(`SELECT * FROM articulo WHERE cod = '${articleId}'`, (err, res) => {
+  let selectQuery = `SELECT * FROM articulo WHERE cod = '${articleId}'`;
+  sql.query(selectQuery, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
