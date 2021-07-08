@@ -80,7 +80,7 @@ Article.updateById = (id, article, result) => {
 };
 
 Article.remove = (id, result) => {
-  sql.query("DELETE FROM articulo WHERE id = ?", id, (err, res) => {
+  sql.query("DELETE FROM articulo WHERE cod = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -93,7 +93,7 @@ Article.remove = (id, result) => {
       return;
     }
 
-    console.log("deleted article with id: ", id);
+    console.log("deleted article with cod: ", id);
     result(null, res);
   });
 };
